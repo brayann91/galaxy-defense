@@ -1,0 +1,7 @@
+AudioStreamPlayer
+AnimationPlayer
+Label
+TextureRect
+Control
+CanvasLayer
+Camera3D

@@ -11,8 +11,18 @@ config_version=5
 [application]
 
 config/name="Galaxy Defense"
+run/main_scene="uid://tfy27ionloo4"
 config/features=PackedStringArray("4.6", "Mobile")
+run/max_fps=60
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/resizable=false
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [physics]
 
@@ -20,5 +30,6 @@ config/icon="res://icon.svg"
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
-renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true

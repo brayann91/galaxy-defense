@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://tfy27ionloo4"]
+
+[ext_resource type="Script" uid="uid://ulkm4xshls6d" path="res://scenes/loading.gd" id="1_5d8b5"]
+[ext_resource type="Texture2D" uid="uid://pjqsopw50pnr" path="res://assets/ui/loading/loading.png" id="1_rx3dl"]
+[ext_resource type="AudioStream" uid="uid://b6w05vwmqqxa0" path="res://audio/loading_theme.ogg" id="3_y56h7"]
+
+[sub_resource type="Animation" id="Animation_y56h7"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_5d8b5"]
+resource_name = "loading_text"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": ["Cargando", "Cargando .", "Cargando . .", "Cargando . . ."]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y56h7"]
+_data = {
+&"RESET": SubResource("Animation_y56h7"),
+&"loading_text": SubResource("Animation_5d8b5")
+}
+
+[node name="Loading" type="Node2D" unique_id=2034571821]
+script = ExtResource("1_5d8b5")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1149983853]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("1_rx3dl")
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="." unique_id=110603305]
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 980.0
+offset_right = 1920.0
+offset_bottom = 1035.0
+grow_horizontal = 2
+theme_override_constants/paragraph_spacing = 0
+theme_override_font_sizes/font_size = 40
+text = "Cargando . ."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1263725751]
+libraries/ = SubResource("AnimationLibrary_y56h7")
+playback_auto_capture_transition_type = 6
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=306581329]
+stream = ExtResource("3_y56h7")

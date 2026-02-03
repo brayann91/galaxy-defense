@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://b643jvmjedgch"]
+
+[ext_resource type="AudioStream" uid="uid://b6w05vwmqqxa0" path="res://audio/loading_theme.ogg" id="1_vjhcd"]
+
+[node name="Main" type="Node3D" unique_id=2093970393]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=39053874]
+transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.7071067, 0, -0.70710677, 0.7071067, 0, 10, 10)
+fov = 50.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=671952285]
+
+[node name="UIRoot" type="Control" parent="CanvasLayer" unique_id=837199068]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1889914517]
+stream = ExtResource("1_vjhcd")
